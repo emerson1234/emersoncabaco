@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title></title>
+	<meta charset="utf-8">
+</head>
+<body>
+
+<form>
+<fieldset>
+<legend>Atividade Extra: Máscaras</legend><br>	
+	CPF:
+	<input type="text" name="cpf" id="cpf" onkeydown="mascaraCPF(this);" maxlength="14">
+	Telefone:
+	<input type="text" name="telefone" id="telefone" onkeydown="mascaraTelefone(this);" maxlength="13">
+	Cep:
+	<input type="text" name="cep" id="cep" onkeydown="mascaraCep(this);" maxlength="9">
+</fieldset>
+</form>
+
+
+<script type="text/javascript">
+	function mascaraTelefone(telefone){
+    	if (telefone.value.length==0) {
+			telefone.value = telefone.value + '(' ; 
+
+		}
+		if (telefone.value.length==3) {
+			telefone.value = telefone.value + ')' ; 
+
+		}
+		if (telefone.value.length==8) {
+			telefone.value = telefone.value + '-' ; 
+
+		}
+	}
+
+    function mascaraCPF(cpf){
+    	if (cpf.value.length==3) {
+			cpf.value = cpf.value + '.' ; 
+
+		}
+		if (cpf.value.length==7) {
+			cpf.value = cpf.value + '.' ; 
+
+		}
+		if (cpf.value.length==11) {
+			cpf.value = cpf.value + '-' ; 
+
+		}
+
+    }
+		
+		
+
+	function mascaraCep(elemento) {
+		if (elemento.value.length==5) {
+			elemento.value = elemento.value + '-' ; 
+
+		}
+	}
+
+</script>
+
+</body>
+</html>
